@@ -1,3 +1,5 @@
+"use client";
+
 import React, {
   createContext,
   FC,
@@ -11,7 +13,7 @@ import React, {
 // import { useNavigate } from "react-router-dom";
 import { onAuthStateChanged, UserInfo } from "firebase/auth";
 // import { auth } from "firebaseConfig";
-import { getDbUserByEmail } from "@/lib/db";
+// import { getDbUserByEmail } from "@/lib/db";
 import { useRouter } from "next/navigation";
 import { User, UserRole } from "@/types/user";
 import { auth } from "@/firebaseConfig";
@@ -38,7 +40,7 @@ export const useUser = () => {
 };
 
 export const UserProvider: FC<PropsWithChildren> = ({ children }) => {
-  const isStorageLoggedIn = window.localStorage.getItem("isLoggedIn");
+  const isStorageLoggedIn = localStorage.getItem("isLoggedIn");
 
   const [user, setUser] = useState<User | null>(null);
   const [isLoggedIn, setIsLoggedIn] = useState(!!isStorageLoggedIn || false);
@@ -48,35 +50,40 @@ export const UserProvider: FC<PropsWithChildren> = ({ children }) => {
   const isAdmin = user?.roles.includes(UserRole.admin) ?? false;
 
   const synchUserByEmail = async (email: string, omitMessage?: boolean) => {
-    const dbUser = await getDbUserByEmail(email);
+    const dbUser = await fetch("/api/user", {
+      method: "GET",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email }),
+    });
+    // const dbUser = await getDbUserByEmail(email);
 
-    if (!!dbUser) {
-      setUser({
-        ...dbUser,
-      });
-      window.localStorage.setItem("isLoggedIn", "1");
-      setIsLoggedIn(true);
+    // if (!!dbUser) {
+    //   setUser({
+    //     ...dbUser,
+    //   });
+    //   window.localStorage.setItem("isLoggedIn", "1");
+    //   setIsLoggedIn(true);
 
-      if (!omitMessage) {
-        router.push("/academy");
-        // toast.success("Ви успішно увійшли до системи!");
-      }
-    } else {
-      setUser(null);
-      setIsLoggedIn(false);
+    //   if (!omitMessage) {
+    //     router.push("/academy");
+    //     // toast.success("Ви успішно увійшли до системи!");
+    //   }
+    // } else {
+    //   setUser(null);
+    //   setIsLoggedIn(false);
 
-      window.localStorage.removeItem("isLoggedIn");
+    //   window.localStorage.removeItem("isLoggedIn");
 
-      // !omitMessage &&
-      //   toast.warning("У вас немає доступу. Зв'яжіться з адміністратором.");
-    }
+    //   // !omitMessage &&
+    //   //   toast.warning("У вас немає доступу. Зв'яжіться з адміністратором.");
+    // }
   };
 
   const logOut = () => {
     setUser(null);
     setIsLoggedIn(false);
     signOutGoogle();
-    window.localStorage.removeItem("isLoggedIn");
+    localStorage.removeItem("isLoggedIn");
   };
 
   useEffect(() => {
