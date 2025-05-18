@@ -1,0 +1,9 @@
+html {
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+.container {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
