@@ -28,6 +28,7 @@ import { Trash } from "lucide-react";
 import "react-image-crop/dist/ReactCrop.css";
 import { useRouter } from "next/navigation";
 import Loader from "@/components/shared/loader";
+import { auth } from "@/firebaseConfig";
 
 const CreateCategoryForm: FC<CreateCategoryFormProps> = ({ defaultData }) => {
   const [crop, setCrop] = useState<Crop>();
@@ -99,6 +100,20 @@ const CreateCategoryForm: FC<CreateCategoryFormProps> = ({ defaultData }) => {
     }
   };
 
+  const deleteCategory = async () => {
+    if (defaultData?.id) {
+      setIsLoading(true);
+
+      const res = await fetch(`/api/category?id=${defaultData?.id}`, {
+        method: "DELETE",
+      });
+
+      if (res.ok) {
+        router.push("/categories");
+      }
+    }
+  };
+
   return (
     <>
       {isLoading ? (
@@ -159,14 +174,25 @@ const CreateCategoryForm: FC<CreateCategoryFormProps> = ({ defaultData }) => {
                 className="border-1 rounded py-2 p-4 w-fit"
               />
             )}
-            <Button
-              type="submit"
-              className="w-fit mx-auto"
-              size="lg"
-              disabled={!form.formState.isValid}
-            >
-              {isEditMode ? "Змінити" : "Створити"}
-            </Button>
+            <div className="w-fit mx-auto flex flex-items gap-4">
+              <Button
+                type="submit"
+                className="w-fit mx-auto"
+                size="lg"
+                disabled={!form.formState.isValid}
+              >
+                {isEditMode ? "Змінити" : "Створити"}
+              </Button>
+              {isEditMode ? (
+                <Button
+                  onClick={deleteCategory}
+                  type="button"
+                  variant="destructive"
+                >
+                  Видалити
+                </Button>
+              ) : null}
+            </div>
           </form>
         </Form>
       )}

@@ -3,6 +3,7 @@ import { base64ToFile } from "@/lib/utils";
 import { uploadRouter, uploadthing, utapi } from "@/uploadthingConfig";
 import {
   collection,
+  deleteDoc,
   doc,
   getDoc,
   getDocs,
@@ -121,5 +122,31 @@ export async function GET(req: Request) {
     return new Response(JSON.stringify({ error: "Failed to fetch user" }), {
       status: 500,
     });
+  }
+}
+
+export async function DELETE(req: Request) {
+  const { searchParams } = new URL(req.url);
+  const id = searchParams.get("id");
+
+  try {
+    if (!id) {
+      throw new Error("Cannot delete category");
+    }
+
+    const docRef = doc(db, "categories", id);
+
+    await deleteDoc(docRef)
+      .then(() => new Response(null, { status: 200 }))
+      .catch(() => {
+        throw new Error("Cannot delete category");
+      });
+  } catch {
+    return new Response(
+      JSON.stringify({ error: "Failed to delete category" }),
+      {
+        status: 500,
+      }
+    );
   }
 }
