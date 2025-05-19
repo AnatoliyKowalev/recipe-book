@@ -6,13 +6,15 @@ const protectedRoutes = ["/categories", "/category"];
 
 export default async function middleware(request: NextRequest) {
   const session = await auth();
+  const sessionEmail = session?.user?.email;
 
   const { pathname } = request.nextUrl;
 
   const isProtected = protectedRoutes.some((route) =>
     pathname.startsWith(route)
   );
-  if (isProtected && !session) {
+
+  if (isProtected && !sessionEmail) {
     return NextResponse.redirect(new URL("/api/auth/signin", request.url));
   }
 

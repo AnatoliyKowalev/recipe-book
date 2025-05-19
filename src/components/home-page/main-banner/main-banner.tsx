@@ -1,4 +1,6 @@
+import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import Link from "next/link";
 import React, { FC } from "react";
 
 const MainBanner: FC = () => {
@@ -6,12 +8,14 @@ const MainBanner: FC = () => {
     <div className="h-[60vh] relative">
       <Image
         src="/img/main-banner-bg.webp"
-        // src="/img/11.jpg"
         alt="банер"
         className="object-cover rounded-[1rem]"
         priority
         fill
       />
+      <Button className="absolute right-0 bottom-0" asChild>
+        <Link href="/categories">Categories</Link>
+      </Button>
     </div>
   );
 };

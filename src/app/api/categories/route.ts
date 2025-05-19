@@ -1,6 +1,6 @@
 import { db } from "@/firebaseConfig";
 import { TypeCategory } from "@/types/categories";
-import { collection, getDocs, query, where } from "firebase/firestore";
+import { collection, getDocs } from "firebase/firestore";
 
 export async function GET() {
   try {

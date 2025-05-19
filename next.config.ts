@@ -2,7 +2,13 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   images: {
-    domains: ["gc4oxib16q.ufs.sh"],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "gc4oxib16q.ufs.sh",
+        pathname: "/**",
+      },
+    ],
   },
 };
 
