@@ -1,15 +1,15 @@
+"use client";
+
 import React, { FC } from "react";
-import { useUser } from "@/components/contexts/user-context";
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import { faRightToBracket } from "@fortawesome/free-solid-svg-icons";
+import { logout } from "@/lib/actions/auth";
+import { Button } from "@/components/ui/button";
+import { LogOut } from "lucide-react";
 
 const LogOutButton: FC = () => {
-  const { logOut } = useUser();
-
   return (
-    <button onClick={() => logOut()} title="Вийти">
-      {/* <FontAwesomeIcon icon={faRightToBracket} /> */}
-    </button>
+    <Button onClick={() => logout()} variant="destructive">
+      <LogOut /> Вийти
+    </Button>
   );
 };
 

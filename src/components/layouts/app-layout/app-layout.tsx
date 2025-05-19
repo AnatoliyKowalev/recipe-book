@@ -5,13 +5,11 @@ import React, { FC, PropsWithChildren } from "react";
 
 const AppLayout: FC<PropsWithChildren> = ({ children }) => {
   return (
-    // <UserProvider>
     <div className="min-h-[100vh] py-[2vh] container mx-auto flex flex-col">
       {/* <AppHeader /> */}
       {children}
       {/* <AppFooter /> */}
     </div>
-    // </UserProvider>
   );
 };
 

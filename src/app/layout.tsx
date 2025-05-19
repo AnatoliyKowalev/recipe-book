@@ -28,7 +28,7 @@ export default function RootLayout({
     <>
       <html lang="en" className={comfortaa.className}>
         <body
-          className="text-foreground antialiased light"
+          className="text-foreground antialiased light bg-card"
           style={{
             overflow: "visible!important",
           }}

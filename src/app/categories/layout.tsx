@@ -1,8 +1,8 @@
-import PageLayout from "@/components/layouts/page-layout";
 import React, { FC, PropsWithChildren } from "react";
+import AdminLayout from "@/components/layouts/admin-layout";
 
 const Layout: FC<PropsWithChildren> = ({ children }) => {
-  return <PageLayout>{children}</PageLayout>;
+  return <AdminLayout>{children}</AdminLayout>;
 };
 
 export default Layout;

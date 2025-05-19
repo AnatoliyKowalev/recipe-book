@@ -1,26 +1,26 @@
-import React, { FC, useContext } from "react";
-import { faUserLock } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+//   const { synchUserByEmail } = useContext(UserContext);
 
-import { UserContext } from "context/UserContext";
+//   const handleLogin = async () => {
+//     const userLoginData = await signInWithGoogle();
 
-import { signInWithGoogle } from "utils/auth";
+//     if (userLoginData) {
+//       synchUserByEmail(userLoginData.user.email);
+//     }
+//   };
+
+"use client";
+
+import React, { FC } from "react";
+import { login } from "@/lib/actions/auth";
+import { Button } from "@/components/ui/button";
+import { LogIn } from "lucide-react";
 
 const SignInGoogleButton: FC = () => {
-  const { synchUserByEmail } = useContext(UserContext);
-
-  const handleLogin = async () => {
-    const userLoginData = await signInWithGoogle();
-
-    if (userLoginData) {
-      synchUserByEmail(userLoginData.user.email);
-    }
-  };
-
   return (
-    <button onClick={handleLogin} title="Авторизуватись">
-      <FontAwesomeIcon icon={faUserLock} />
-    </button>
+    <Button onClick={login}>
+      <LogIn />
+      Увійти
+    </Button>
   );
 };
 
