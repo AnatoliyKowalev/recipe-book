@@ -1,4 +1,8 @@
 import React from "react";
+import { getRecipesByCategoryId } from "@/lib/actions/recipes";
+import Image from "next/image";
+import Recipes from "@/components/category-page/recipes";
+import PageHeader from "@/components/shared/page-header";
 
 export default async function CategoryPage({
   params,
@@ -6,10 +10,19 @@ export default async function CategoryPage({
   params: { id: string };
 }) {
   const { id } = await params;
-  // const data = await fetch(`${process.env.SITE_URL}/api/category?id=${id}`);
-  const category = null;
+  const recipes = await getRecipesByCategoryId(id);
 
-  if (!category) return <div>Категорія не знайдена!</div>;
+  console.log(recipes);
 
-  return <></>;
+  if (!recipes?.length)
+    return <div className="mx-auto text-xl">Рецептів не знайдено!</div>;
+
+  return (
+    <>
+      <PageHeader title="Рецепти" backLink="/" />
+      <div className="flex flex-col gap-2">
+        <Recipes recipes={recipes} />
+      </div>
+    </>
+  );
 }

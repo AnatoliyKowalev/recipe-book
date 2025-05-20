@@ -8,3 +8,13 @@ html {
   padding-right: 1rem;
   max-width: 1024px;
 }
+
+table,
+tr,
+td {
+  border: 1px solid var(--primary);
+}
+
+td {
+  padding: 2px 4px;
+}

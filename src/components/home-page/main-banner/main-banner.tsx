@@ -1,6 +1,4 @@
-import { Button } from "@/components/ui/button";
 import Image from "next/image";
-import Link from "next/link";
 import React, { FC } from "react";
 
 const MainBanner: FC = () => {
@@ -13,9 +11,6 @@ const MainBanner: FC = () => {
         priority
         fill
       />
-      <Button className="absolute right-0 bottom-0" asChild>
-        <Link href="/categories">Categories</Link>
-      </Button>
     </div>
   );
 };

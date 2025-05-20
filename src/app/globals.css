@@ -48,10 +48,10 @@
   --background: oklch(1 0 0);
   --foreground: #343c42;
   --card: #fffdf4;
-  --card-foreground: oklch(0.145 0 0);
+  --card-foreground: #f5f0da;
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.145 0 0);
-  --primary: #24692b;
+  --primary: #ca7842;
   --primary-foreground: oklch(0.985 0 0);
   --secondary: #4f5c66;
   --secondary-foreground: oklch(0.205 0 0);

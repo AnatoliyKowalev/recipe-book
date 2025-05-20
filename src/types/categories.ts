@@ -1,7 +1,4 @@
-export type TypeCategory = {
-  name: string;
-  image: TypeContentfulMedia;
-};
+import { TypeContentfulMedia } from "./common";
 
 export type TypeContentfulCategory = {
   fields: TypeCategory;
@@ -10,11 +7,7 @@ export type TypeContentfulCategory = {
   };
 };
 
-export type TypeContentfulMedia = {
-  fields: {
-    title: string;
-    file: {
-      url: string;
-    };
-  };
+export type TypeCategory = {
+  name: string;
+  image: TypeContentfulMedia;
 };
