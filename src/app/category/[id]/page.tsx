@@ -1,6 +1,5 @@
 import React from "react";
 import { getRecipesByCategoryId } from "@/lib/actions/recipes";
-import Image from "next/image";
 import Recipes from "@/components/category-page/recipes";
 import PageHeader from "@/components/shared/page-header";
 import Link from "next/link";
@@ -13,8 +12,6 @@ export default async function CategoryPage({
 }) {
   const { id } = await params;
   const recipes = await getRecipesByCategoryId(id);
-
-  console.log(recipes);
 
   if (!recipes?.length)
     return (

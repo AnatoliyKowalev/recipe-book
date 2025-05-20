@@ -1,9 +1,9 @@
-import { BLOCKS } from "@contentful/rich-text-types";
 import Image from "next/image";
+import { Block, BLOCKS, Inline } from "@contentful/rich-text-types";
 
 export const renderOptions = {
   renderNode: {
-    [BLOCKS.EMBEDDED_ASSET]: (node: any) => {
+    [BLOCKS.EMBEDDED_ASSET]: (node: Block | Inline) => {
       const { title, description, file } = node.data.target.fields;
 
       return (

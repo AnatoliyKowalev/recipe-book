@@ -1,7 +1,5 @@
 import React from "react";
-import { getRecipeById, getRecipesByCategoryId } from "@/lib/actions/recipes";
-import Image from "next/image";
-import Recipes from "@/components/category-page/recipes";
+import { getRecipeById } from "@/lib/actions/recipes";
 import PageHeader from "@/components/shared/page-header";
 import PreviewBanner from "@/components/recipe-page/preview-banner";
 import RteBlock from "@/components/shared/rte-block";
@@ -13,8 +11,6 @@ export default async function RecipePage({
 }) {
   const { id } = await params;
   const recipe = await getRecipeById(id);
-
-  console.log(recipe);
 
   if (!recipe) {
     return <div className="mx-auto text-xl">Рецепт не знайдено!</div>;
