@@ -27,7 +27,10 @@ const Recipes: FC<RecipesProps> = ({ recipes, className }) => {
               <Link href={`/recipe/${sys.id}`}>Перейти</Link>
             </Button>
           </div>
-          <IngredientsPopover ingredients={fields.ingredients} />
+          <IngredientsPopover
+            ingredients={fields.ingredients}
+            className="border-white text-white"
+          />
         </div>
       ))}
     </div>
