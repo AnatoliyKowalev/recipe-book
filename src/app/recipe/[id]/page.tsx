@@ -7,7 +7,7 @@ import RteBlock from "@/components/shared/rte-block";
 export default async function RecipePage({
   params,
 }: {
-  params: { id: string };
+  params: Promise<{ id: string }>;
 }) {
   const { id } = await params;
   const recipe = await getRecipeById(id);

@@ -11,7 +11,7 @@ const PageHeader: FC<PageHeaderProps> = ({ title }) => {
   const router = useRouter();
 
   return (
-    <div className="flex flex-col items-start gap-2 text-xl mt-2 mb-6">
+    <div className="flex flex-col items-start gap-2 text-xl mt-2 mb-4 md:mb-6">
       <nav className="flex items-center gap-4">
         <Button
           onClick={() => router.back()}

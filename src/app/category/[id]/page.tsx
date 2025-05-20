@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button";
 export default async function CategoryPage({
   params,
 }: {
-  params: { id: string };
+  params: Promise<{ id: string }>;
 }) {
   const { id } = await params;
   const recipes = await getRecipesByCategoryId(id);

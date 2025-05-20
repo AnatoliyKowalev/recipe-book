@@ -6,11 +6,11 @@ import Link from "next/link";
 
 const Categories: FC<CategoriesProps> = ({ categories, className }) => {
   return (
-    <div className={cn("grid md:grid-cols-12 gap-4", className)}>
+    <div className={cn("grid grid-cols-2 md:grid-cols-12 gap-4", className)}>
       {categories.map(({ sys, fields }) => (
         <Link
           href={`/category/${sys.id}`}
-          className="md:col-span-2 flex flex-col items-center gap-2 bg-card-foreground pb-1 rounded overflow-hidden cursor-pointer group"
+          className="col-span-1 md:col-span-2 flex flex-col items-center gap-2 bg-card-foreground pb-1 rounded overflow-hidden cursor-pointer group"
           key={sys.id}
         >
           <Image
@@ -20,7 +20,7 @@ const Categories: FC<CategoriesProps> = ({ categories, className }) => {
             height={200}
             alt={fields.image.fields.title}
           />
-          {fields.name}
+          <div className="text-lg">{fields.name}</div>
         </Link>
       ))}
     </div>

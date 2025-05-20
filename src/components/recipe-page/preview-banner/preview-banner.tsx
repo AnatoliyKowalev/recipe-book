@@ -15,7 +15,7 @@ const PreviewBanner: FC<PreviewBannerProps> = ({ recipe }) => {
         fill
       />
       <div className="absolute left-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent w-full h-[200px] px-10">
-        <div className="absolute left-8 bottom-4 text-lg font-bold text-white">
+        <div className="absolute left-4 md:left-8 bottom-2 md:bottom-4 text-lg font-bold text-white">
           {fields.name}
         </div>
       </div>
