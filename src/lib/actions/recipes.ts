@@ -18,3 +18,18 @@ export async function getRecipesByCategoryId(
     return [];
   }
 }
+
+export async function getRecipeById(
+  recipeId: string
+): Promise<TypeContentfulRecipe | null> {
+  const client = getClient();
+
+  try {
+    const recipe = await client.getEntry(recipeId);
+
+    return recipe as unknown as TypeContentfulRecipe;
+  } catch (error) {
+    console.error("Error fetching recipes by category id:", error);
+    return null;
+  }
+}

@@ -8,7 +8,11 @@ const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
 
 const Loader: FC = () => {
   return (
-    <Lottie animationData={fryEgg} loop={true} className="h-[60vh] my-[10vh]" />
+    <Lottie
+      animationData={fryEgg}
+      loop={true}
+      className="h-[60vh] my-[10vh] absolute top-0 w-full"
+    />
   );
 };
 

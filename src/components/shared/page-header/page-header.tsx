@@ -1,19 +1,32 @@
+"use client";
+
 import React, { FC } from "react";
 import Link from "next/link";
 import { PageHeaderProps } from "./interfaces";
 import { Button } from "@/components/ui/button";
-import { ChevronLeft } from "lucide-react";
+import { ChevronLeft, Home } from "lucide-react";
+import { useRouter } from "next/navigation";
 
-const PageHeader: FC<PageHeaderProps> = ({ title, backLink }) => {
+const PageHeader: FC<PageHeaderProps> = ({ title }) => {
+  const router = useRouter();
+
   return (
-    <div className="flex flex-col items-start gap-1 text-xl mt-2 mb-6">
-      {backLink ? (
+    <div className="flex flex-col items-start gap-2 text-xl mt-2 mb-6">
+      <nav className="flex items-center gap-4">
+        <Button
+          onClick={() => router.back()}
+          className="flex items-center !px-0"
+          variant="link"
+        >
+          <ChevronLeft /> Назад
+        </Button>
+        ...
         <Button variant="link" asChild>
-          <Link href={backLink} className="flex items-center !px-0">
-            <ChevronLeft /> Назад
+          <Link href="/" className="flex items-center !px-0">
+            <Home /> Головна
           </Link>
         </Button>
-      ) : null}
+      </nav>
       <h2>{title}</h2>
     </div>
   );

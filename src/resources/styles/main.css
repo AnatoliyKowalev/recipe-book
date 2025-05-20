@@ -9,7 +9,7 @@ html {
   max-width: 1024px;
 }
 
-table,
+/* table,
 tr,
 td {
   border: 1px solid var(--primary);
@@ -17,4 +17,4 @@ td {
 
 td {
   padding: 2px 4px;
-}
+} */

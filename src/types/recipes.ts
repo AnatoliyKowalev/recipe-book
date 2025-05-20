@@ -12,4 +12,5 @@ export type TypeRecipe = {
   name: string;
   image: TypeContentfulMedia;
   ingredients: Document;
+  script: Document;
 };

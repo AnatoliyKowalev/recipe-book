@@ -18,7 +18,7 @@ const IngredientsPopover: FC<IngredientsPopoverProps> = ({ ingredients }) => {
         </Button>
       </PopoverTrigger>
       <PopoverContent className="w-80 flex flex-col gap-1">
-        <div className="font-bold">Інгрідієнти:</div>
+        <div className="font-bold">Інгредієнти:</div>
         {ingredients ? (
           <RteBlock
             content={ingredients}

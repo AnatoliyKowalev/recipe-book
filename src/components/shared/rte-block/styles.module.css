@@ -1,0 +1,70 @@
+.rte-block {
+  table,
+  tr,
+  td {
+    border: 1px solid var(--primary);
+  }
+
+  td {
+    padding: 2px 4px;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-weight: bold;
+  }
+
+  h1,
+  h2 {
+    margin: 1rem 0 0.3rem 0;
+  }
+
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin: 0.6rem 0 0.4rem 0;
+  }
+
+  h1 {
+    font-size: 2.4rem;
+  }
+
+  h2 {
+    font-size: 1.8rem;
+  }
+
+  h3 {
+    font-size: 1.4rem;
+  }
+
+  h4 {
+    font-size: 1.2rem;
+  }
+
+  h5 {
+    font-size: 1rem;
+  }
+
+  h6 {
+    font-size: 0.8rem;
+  }
+
+  hr {
+    margin: 2rem 0;
+  }
+
+  p {
+    margin-bottom: 0.5rem;
+  }
+
+  blockquote {
+    color: var(--muted-foreground);
+    padding-left: 0.8rem;
+    border-left: 4px solid var(--muted-foreground);
+  }
+}
