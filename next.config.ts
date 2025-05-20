@@ -5,7 +5,7 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "gc4oxib16q.ufs.sh",
+        hostname: "images.ctfassets.net",
         pathname: "/**",
       },
     ],
