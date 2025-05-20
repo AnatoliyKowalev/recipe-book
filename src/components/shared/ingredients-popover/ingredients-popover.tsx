@@ -8,12 +8,19 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 import RteBlock from "../rte-block";
+import { cn } from "@/lib/utils";
 
-const IngredientsPopover: FC<IngredientsPopoverProps> = ({ ingredients }) => {
+const IngredientsPopover: FC<IngredientsPopoverProps> = ({
+  ingredients,
+  className,
+}) => {
   return (
     <Popover>
       <PopoverTrigger asChild>
-        <Button className="absolute right-2 top-2" variant="outline">
+        <Button
+          className={cn("absolute right-2 top-2", className)}
+          variant="outline"
+        >
           <ListOrdered />
         </Button>
       </PopoverTrigger>
