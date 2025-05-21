@@ -20,6 +20,7 @@ const IngredientsPopover: FC<IngredientsPopoverProps> = ({
         <Button
           className={cn("absolute right-2 top-2", className)}
           variant="outline"
+          size="sm"
         >
           <Beaker />
         </Button>
