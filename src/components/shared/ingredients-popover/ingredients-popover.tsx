@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 import { IngredientsPopoverProps } from "./interfaces";
 import { Button } from "@/components/ui/button";
-import { ListOrdered } from "lucide-react";
+import { Beaker } from "lucide-react";
 import {
   Popover,
   PopoverContent,
@@ -21,7 +21,7 @@ const IngredientsPopover: FC<IngredientsPopoverProps> = ({
           className={cn("absolute right-2 top-2", className)}
           variant="outline"
         >
-          <ListOrdered />
+          <Beaker />
         </Button>
       </PopoverTrigger>
       <PopoverContent className="w-80 flex flex-col gap-1">

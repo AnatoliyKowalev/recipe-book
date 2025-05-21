@@ -16,7 +16,7 @@ const Recipes: FC<RecipesProps> = ({ recipes, className }) => {
         >
           <Image
             src={`https:${fields.image.fields.file.url}`}
-            className="w-full transition group-hover:scale-102 group-hover:rotate-1"
+            className="w-full transition group-hover:scale-102 group-hover:rotate-1 h-[230px] lg:h-[290px] object-cover"
             width={600}
             height={400}
             alt={fields.image.fields.title}
