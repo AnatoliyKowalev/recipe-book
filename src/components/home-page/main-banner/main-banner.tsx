@@ -14,7 +14,7 @@ const MainBanner: FC = () => {
       <Image
         src="/img/share-logo.webp"
         alt="логотип круглий"
-        className="rounded-full w-[150px] h-[150px] absolute ml-[10%] mt-[5%]"
+        className="rounded-full w-[150px] h-[150px] lg:w-[300px] lg:h-[300px] absolute ml-[10%] mt-[5%]"
         width={300}
         height={300}
       />
