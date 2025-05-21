@@ -13,7 +13,7 @@ export const renderOptions = {
           alt={description || title}
           width={1000}
           height={800}
-          className="w-full h-auto rounded-lg"
+          className="w-full lg:w-[70%] h-auto rounded-lg mt-4 mb-6"
         />
       );
     }, // eslint-disable-next-line @typescript-eslint/no-unused-vars
