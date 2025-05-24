@@ -1,4 +1,8 @@
 .rte-block {
+  table {
+    margin-bottom: 1rem;
+  }
+
   table,
   tr,
   td {

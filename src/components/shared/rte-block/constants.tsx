@@ -39,7 +39,7 @@ export const renderOptions = {
       <p className="mb-2">{children}</p>
     ), // eslint-disable-next-line @typescript-eslint/no-unused-vars
     [BLOCKS.QUOTE]: (_: Block | Inline, children: ReactNode) => (
-      <blockquote className="pl-3 border-l-4 border-[color:var(--muted-foreground)] text-[color:var(--muted-foreground)]">
+      <blockquote className="pl-3 border-l-4 mb-2 border-[color:var(--muted-foreground)] text-[color:var(--muted-foreground)]">
         {children}
       </blockquote>
     ),
